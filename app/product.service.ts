@@ -29,7 +29,7 @@ export class ProductService {
 		  
          /* return this._jsonp.get(this.apiUrl) .toPromise()
                .then(response => response.json().data as Product[]);*/
-            return new Promise<Product[]>(resolve => {
+      return new Promise<Product[]>(resolve => {
        resolve(Products);
     });
 	}
