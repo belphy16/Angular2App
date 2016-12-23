@@ -1,2 +1,2 @@
 # Angular2App
-An Angular 2 application to show products in electronics shop.
+A basic Angular 2 application to show and add electronic products without any server side code.
