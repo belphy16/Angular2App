@@ -4,10 +4,10 @@ import {Observable} from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import {Jsonp} from '@angular/http';
-
+//import { Product } from './product';
 export class Product {
-  constructor(public Product:string, public Company: string, public Price: number,
-  	public Quantity: number) { }
+  constructor(public productName:string, public companyName: string, public price: number,
+  	public quantity: number) { }
 }
 
 const Products: Product[] = [
@@ -35,7 +35,7 @@ export class ProductService {
 	}
 
 	constructor(private http: Http, private _jsonp: Jsonp){
-		alert("service constructor");
+		//alert("service constructor");
 		this.apiUrl = "http://jsoneditoronline.org/?id=0abfaa09f2557e50a08b6131ef1ec23c/callback=JSONP_CALLBACK";
 		this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');

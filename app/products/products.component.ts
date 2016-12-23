@@ -1,27 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
-import { ProductService, Product } from '../product.service';
+import { ProductService,Product } from '../product.service';
+
 
 @Component({
   selector: 'app-products',
   template: `
     <h2 style="text-align:center">Add Product</h2>
     <div class="form">
-    <form (ngSubmit)="addProduct()" #productForm="ngForm">
+    <form (ngSubmit)="addProduct(proname)" #productForm="ngForm">
     <label for="productName">Product Name</label>
-    <input type="text" class="form-control"  (ngModel)="product.productName">
+    <input type="text" class="form-control"  [(ngModel)]="proname">
 
      <label for="companyName">Company Name</label>
-    <input type="text" class="form-control"  (ngModel)="product.companyName">
+    <input type="text" class="form-control"  [(ngModel)]="product.companyName">
 
      <label for="price">Price</label>
-    <input type="text" class="form-control"  (ngModel)="product.price">
+    <input type="text" class="form-control"  [(ngModel)]="product.price">
 
      <label for="quantity">Quantity</label>
-    <input type="text" class="form-control"  (ngModel)="product.quantity">
-    </form>
+    <input type="text" class="form-control"  [(ngModel)]="product.quantity">
+    
 
-    <button type="submit" class="buttonClass btn btn-success" (click)="save()" [disabled]="!productForm.form.valid">Add</button>
+    <button type="submit" class="buttonClass btn btn-success" [disabled]="!productForm.form.valid">Add</button>
+    
+     </form>
     <button type="submit" class="btn btn-default" (click)="back()" [disabled]="!productForm.form.valid">Back</button>
       </div>
   `,
@@ -29,16 +32,17 @@ import { ProductService, Product } from '../product.service';
  ]
 })
 export class ProductsComponent implements OnInit {
-  product
+ // product: Product;
   constructor(
     private router:Router,
     private productService: ProductService) { }
 
   ngOnInit() {
-  }
-  save(){
-    alert("save");
    
+  }
+  addProduct(value){
+    alert("save");
+    //alert(this.product);
 
   }
   back(){

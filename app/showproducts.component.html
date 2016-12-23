@@ -15,17 +15,17 @@
   <tbody >
     <tr *ngFor='let prod of products'>
       
-      <td>{{prod.Product}}</td>
-      <td>{{prod.Company}}</td>
-      <td>{{prod.Price}}</td>
-      <td>{{prod.Quantity}}</td>
+      <td>{{prod.productName}}</td>
+      <td>{{prod.companyName}}</td>
+      <td>{{prod.price}}</td>
+      <td>{{prod.quantity}}</td>
     </tr>
     
   </tbody>
 </table>
 
 <button class="btn btn-" (click)="addProduct()">Add Product</button>
-   <a routerLink="addProduct"  routerLinkActive="active">Heroes</a>
+  
 
 
 
