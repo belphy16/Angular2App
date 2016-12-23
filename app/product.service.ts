@@ -34,6 +34,13 @@ export class ProductService {
     });
 	}
 
+	addProducts(product){
+		
+		Products.push(new Product(product[0],product[1],product[2],product[3]));
+    };
+	
+
+
 	constructor(private http: Http, private _jsonp: Jsonp){
 		//alert("service constructor");
 		this.apiUrl = "http://jsoneditoronline.org/?id=0abfaa09f2557e50a08b6131ef1ec23c/callback=JSONP_CALLBACK";
